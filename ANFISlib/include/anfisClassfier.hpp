@@ -1,6 +1,6 @@
 #include <cmath>
 #include <cstdint>
-#include <config.hpp>
+#include "config.hpp"
 
 
 class ANFIS {
@@ -14,8 +14,8 @@ private:
     float m_connectionsLayer[INPUT_NUMBER][(uint8_t)pow(FUZZY_RULES,INPUT_NUMBER)];
     float m_connectedLayers[(uint8_t)(pow(FUZZY_RULES, INPUT_NUMBER))];
     uint8_t m_weights[(uint8_t)pow(FUZZY_RULES,INPUT_NUMBER)] = WEIGHTS;
-    float m_agregationParameters[(uint8_t)pow(FUZZY_RULES,INPUT_NUMBER)] = AGREGATION_PARAMETERS;
-    float m_agregatedLayers[2][(uint8_t)(pow(FUZZY_RULES, INPUT_NUMBER))];
+    float m_aggregationParameters[(uint8_t)pow(FUZZY_RULES,INPUT_NUMBER)] = AGREGATION_PARAMETERS;
+    float m_aggregatedLayers[2][(uint8_t)(pow(FUZZY_RULES, INPUT_NUMBER))];
     float m_defuzzificated;
 
     void readInput(float FSR1, float FSR2, float FSR3);
@@ -25,6 +25,6 @@ private:
     void defuzzifyOutput();
 
 public:
-    ANFIS();
+    ANFIS() = default;
     float classify(float FSR1, float FSR2, float FSR3);
 };

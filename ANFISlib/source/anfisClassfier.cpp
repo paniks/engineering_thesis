@@ -10,10 +10,6 @@
 #include <norms.hpp>
 #include <defuzzificationMethods.hpp>
 
-
-ANFIS::ANFIS()
-{}
-
 void ANFIS::readInput(float FSR1, float FSR2, float FSR3) {
     this->m_input1 = FSR1;
     this->m_input2 = FSR2;
@@ -66,15 +62,15 @@ void ANFIS::connectLayers() {
 void ANFIS::aggregation() {
     for (uint8_t i = 0; i < pow(FUZZY_RULES, INPUT_NUMBER); i++)
     {
-        m_agregatedLayers[0][i] = m_connectedLayers[i];
-        m_agregatedLayers[1][i] = m_agregationParameters[i];
+        m_aggregatedLayers[0][i] = m_connectedLayers[i];
+        m_aggregatedLayers[1][i] = m_aggregationParameters[i];
     }
 
 }
 
 
 void ANFIS::defuzzifyOutput() {
-    m_defuzzificated = weightedAverage(m_agregatedLayers);
+    m_defuzzificated = weightedAverage(m_aggregatedLayers);
 }
 
 float ANFIS::classify(float FSR1, float FSR2, float FSR3) {

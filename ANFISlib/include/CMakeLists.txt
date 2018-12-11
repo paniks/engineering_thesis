@@ -4,4 +4,5 @@ set(headers
     ${CMAKE_CURRENT_SOURCE_DIR}/anfisClassfier.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/config.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/membershipFunctions.hpp
-    PARENT_SCOPE)
+    PARENT_SCOPE
+)

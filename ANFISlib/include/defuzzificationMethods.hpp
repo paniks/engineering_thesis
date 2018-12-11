@@ -1,6 +1,6 @@
 #include <cmath>
 #include <cstdint>
-#include <config.hpp>
+#include "config.hpp"
 
 float weightedAverage(float array[2][(uint8_t)pow(FUZZY_RULES, INPUT_NUMBER)]);
 
