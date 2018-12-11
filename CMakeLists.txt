@@ -9,7 +9,12 @@ include_directories(
         third_party/uno_timer
 )
 
-add_executable(arduino-anfis main.cpp)
-
 add_subdirectory(third_party/due_timer)
 add_subdirectory(third_party/uno_timer)
+add_subdirectory(include)
+add_subdirectory(source)
+
+add_library(arduino_anfis STATIC ${sources} ${headers})
+
+add_executable(arduino-anfis main.cpp)
+

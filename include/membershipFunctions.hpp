@@ -1,0 +1,1 @@
+float gaussMF(float x, float sigma, float mi);
