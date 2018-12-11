@@ -1,5 +1,5 @@
 //#include "Timer.h"
-#include "include/ANFIS.h"
+#include "ANFISlib/include/anfisClassfier.hpp"
 #include "third_party/due_timer/due_timer.h"
 
 ANFIS left = ANFIS();
